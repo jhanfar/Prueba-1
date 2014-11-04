@@ -94,7 +94,7 @@ public class AdministrarCursosCtl extends GenericForwardComposer implements List
 			        if (evt.getName().equals("onOK")) {
 			        	CursoDTO dto =(CursoDTO) lsxCurso.getModel().getElementAt(lsxCurso.getSelectedIndex());			
 			    		cursoOpInt.eliminarCurso(dto);
-			    		alert("Curso Eliminado");	
+			    		Messagebox.show("Curso Eliminado", "Confirmación", Messagebox.OK, Messagebox.INFORMATION);
 			        } 
 			    }
 			});
@@ -121,6 +121,7 @@ public class AdministrarCursosCtl extends GenericForwardComposer implements List
 		{
 			CursoDTO dto =(CursoDTO) lsxCurso.getModel().getElementAt(lsxCurso.getSelectedIndex());
 			
+			logger.info(dto.getIdn());
 			
 			HashMap<String, Object> params = new HashMap<String, Object>();
 			params.put("dtoCurso", dto);		
