@@ -75,14 +75,14 @@ public class EMailHtml implements Serializable {
       props.setProperty("mail.transport.protocol", "smtp");
       props.setProperty("mail.smtp.starttls.enable", "true");
       props.setProperty("mail.host", "smtp.gmail.com");
-      emailUser = "thomassantos840@gmail.com";
+      emailUser = "pmontoya206@gmail.com";
       props.setProperty("mail.user", emailUser);
-      passwordEmail = "facebook2014";
+      passwordEmail = "proyecto2014";
       props.setProperty("mail.password", passwordEmail);
       props.setProperty("mail.smtp.port", "587");
       props.setProperty("mail.smtp.auth", "true");
       this.subject = subject;
-      this.from = "thomassantos840@gmail.com";
+      this.from = "pmontoya206@gmail.com";
       this.content = menssage;
     } catch (Exception e) {
       LOGGER.error("PropiedadNoEncontradaException ", e);
