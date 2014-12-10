@@ -13,9 +13,11 @@ public class TestMail {
 		
 		try {
 			List<String> emailsTo = new ArrayList<>();
-			emailsTo.add("danilomejia127@gmail.com");
-			emailsTo.add("jkcardona@gmail.com");
-			UdeaEmailService.sendEmail("Test Registro Actividades", "Mesanje de prueba", emailsTo, null, null, null);
+			//emailsTo.add("danilomejia127@gmail.com");
+			//emailsTo.add("jkcardona@gmail.com");
+			//emailsTo.add("cursosuniversidadantioquia@gmail.com");
+			UdeaEmailService.sendEmail("Test Registro Actividades de sus cursos", "Señor Docente, recuerde que debe reportar las actividades" +
+					"de sus cursos a más tardar el día 18 del presente mes", emailsTo, null, null, null);
 		} catch (UdeAEmailSenderException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

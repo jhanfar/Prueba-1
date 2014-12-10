@@ -29,11 +29,17 @@ public class JobAlertasActividadesDocentesSinRegistrar implements Job {
 		System.out.println("¡Job, Notificación docentes! :D");
 		List<String> emailsTo = new ArrayList<>();
 		try {
-		List<DocenteGrupo> listaDocentes = docenteGrupoDAO.getDocenteGrupoList();
-		for (DocenteGrupo docenteGrupo : listaDocentes) {
-			emailsTo.add(docenteGrupo.getDocente().getEmail());
-		}
-			UdeaEmailService.sendEmail("Registro de Actividades", "Recordatorio registro de actividades", emailsTo, null, null, null);
+			if(docenteGrupoDAO!=null){
+				List<DocenteGrupo> listaDocentes = docenteGrupoDAO.getDocenteGrupoList();
+				for (DocenteGrupo docenteGrupo : listaDocentes) {
+					emailsTo.add(docenteGrupo.getDocente().getEmail());
+				}
+			}
+			//emailsTo.add("danilomejia127@gmail.com");
+			//emailsTo.add("jkcardona@gmail.com");
+			emailsTo.add("pmontoya206@gmail.com");
+			UdeaEmailService.sendEmail("Registro Actividades de sus cursos", "Señor Docente, recuerde que debe reportar las actividades" +
+					"de sus cursos a más tardar el día 18 del presente mes", emailsTo, null, null, null);
 		} catch (UdeAEmailSenderException e) {
 			e.printStackTrace();
 		}
